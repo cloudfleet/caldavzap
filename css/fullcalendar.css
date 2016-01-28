@@ -321,10 +321,46 @@ a.fc-event {
 	}
 
 .fc-event-title-strict {
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 	}
+
+.fc-event-tentative {
+	border-style: dashed;
+	border-color: #fff !important;
+	opacity: 0.9;
+
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+
+	-webkit-background-size: 20px 20px;
+	-moz-background-size: 20px 20px;
+	background-size: 20px 20px;
+}
+
+.fc-event-tentative .fc-event-inner {
+	border-style: dashed;
+}
+
+.fc-event-skin.fc-event-cancelled
+{
+	border-style: dashed;
+	border-color: #fff !important;
+	opacity: 0.9;
+}
+
+.fc-event-skin.fc-event-cancelled .fc-event-inner {
+	border-style: dashed;
+	text-decoration: line-through;
+}
+
+.fc-event-row.fc-event-cancelled {
+	text-decoration: line-through;
+}
 
 .fc .ui-resizable-handle { /*** TODO: don't use ui-resizable anymore, change class ***/
 	display: block;
@@ -334,8 +370,6 @@ a.fc-event {
 	font-size: 300%;  /* */
 	line-height: 50%; /* */
 	}
-
-
 
 /* Horizontal Events
 ------------------------------------------------------------------------*/
@@ -582,8 +616,8 @@ table.fc-border-separate {
 /* all-day area */
 
 .fc-agenda-allday {
-    top: 0px;
-    position: absolute;
+	top: 0px;
+	position: absolute;
 }
 
 .fc-agenda-allday th {
@@ -613,7 +647,7 @@ table.fc-border-separate {
 	}
 
 .fc-agenda-slots td {
-    height: 20px !important;
+	height: 20px !important;
 	border-width: 1px 0 0;
 	background: none;
 	}
@@ -748,23 +782,23 @@ table.fc-border-separate {
 	}
 
 .fc-timeline {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-top: 2px solid #585858;
-    z-index: 2;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-top: 2px solid #585858;
+	z-index: 2;
 }
 
 .fc-timeline-arrow {
-    position: absolute;
-    left: 0;
-    width: 6px;
-    height: 12px;
-    background-image: url('../images/resource_arrow_right.svg');
-    z-index: 2;
+	position: absolute;
+	left: 0;
+	width: 6px;
+	height: 12px;
+	background-image: url('../images/resource_arrow_right.svg');
+	z-index: 2;
 }
 
 /* List view  (by bruederli@kolabsys.com)
@@ -777,11 +811,17 @@ table.fc-border-separate {
 	width: auto;
 }
 
+.fc-view-trans .fc-table-dateinfo,
+.fc-view-trans .fc-table-datepicker {
+	opacity: 0.5;
+}
+
 .fc-view-table {
 	padding-left: 8px;
 }
 
 .fc-list-content {
+	float: left;
 	position: relative;
 	border: 1px solid #ccc;
 }
@@ -908,32 +948,55 @@ table.fc-border-separate {
 .fc-view-todo td.fc-event-time {
 	white-space: nowrap;
 	padding-right: 1em;
-	padding-left: 3px !important;
-}
-
-.fc-view-todo td.fc-event-date,
-.fc-view-todo td.fc-event-time {
-	padding-left: 4px !important;
-
 }
 
 .fc-view-table td.fc-event-title,
-.fc-view-todo td.fc-event-title {
+.fc-view-todo td.fc-event-title,
+.fc-view-todo td.fc-event-time,
+.fc-view-todo td.fc-event-location {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
+.fc-view-todo col.fc-event-check {
+	width: 22px;
+}
+
+.fc-event-check {
+	text-align: left;
+}
+
+.fc-event-check input[type="checkbox"]
+{
+	margin-top: -4px;
+	margin-right: 0;
+	margin-bottom: -2px !important;
+	margin-left: 4px;
+}
+
+.fc-view-todo col.fc-event-priority {
+	width: 18px;
+}
+
 .fc-view-todo col.fc-event-time {
-	width: 11.5em;
+	width: 142px;
+}
+
+.fc-view-todo col.fc-event-location {
+	width: 150px;
+}
+
+.fc-event-title {
+	padding: 2px 4px !important;
 }
 
 .fc-view-todo col.fc-event-status {
-	width: 20px;
+	width: 24px;
 }
 
 .fc-view-todo col.fc-event-percent {
-	width: 3.3em;
+	width: 40px;
 }
 
 .fc-view-todo td.fc-event-percent {
@@ -941,18 +1004,23 @@ table.fc-border-separate {
 	padding-right: 4px !important;
 }
 
+.fc-view-todo col.fc-hidden-empty,
+.fc-view-todo col.fc-hidden-width {
+	width: 0;
+}
+
 .fc-view-table .fc-table-dateinfo,
 .fc-view-todo .fc-table-dateinfo {
-	padding-left: 10px;
+	float: left;
 	text-align: left;
+	padding-left: 10px;
 	padding-bottom: 1px;  /* check on FF */
 	margin-top: -8px;     /* check on FF */
 }
 
 .fc-view-table .fc-table-datepicker,
 .fc-view-todo .fc-table-datepicker {
-	position: absolute;
-	top: 0px;
+	float: right;
 	text-align: right;
 	padding-right: 10px;
 	padding-bottom: 1px;  /* check on FF */
@@ -962,6 +1030,14 @@ table.fc-border-separate {
 .fc-table-datepicker .ui-widget-content {
 	display: inline-block !important;
 	border-width: 0px;
+}
+
+.fc-view-table .fc-table-datepicker-no-default .ui-state-active,
+.fc-view-todo .fc-table-datepicker-no-default .ui-state-active {
+	border: 1px solid #c0c0c0;
+	background: #ffffff;
+	font-weight: 400;
+	color: #404040;
 }
 
 .fc-view-table .fc-table-dateinfo-number,
@@ -986,6 +1062,10 @@ table.fc-border-separate {
 	line-height: 0.9em;
 	font-size: 1.5em;
 	font-weight: 300;
+}
+
+.fc-filter {
+	float: left;
 }
 
 .fc-filter-table-header {
@@ -1069,7 +1149,33 @@ table.fc-border-separate {
 	width: 225px;
 }
 
-.fc-table-datepicker .ui-datepicker-header {
+.fc-table-datepicker .ui-datepicker-title {
+	height: 20px;
+	margin: 0 0 0 24px;
+}
+
+.fc-table-datepicker .ui-datepicker-title span {
+	margin-top: 0;
+	vertical-align: middle;
+}
+
+.fc-view-table .fc-table-datepicker .ui-datepicker-header {
+	display: none;
+}
+
+.fc-view-todo .fc-table-datepicker .ui-datepicker-header {
+	color: #404040;
+	background: none;
+	font-size: 0.95em;
+}
+
+.fc-view-todo .fc-table-datepicker-current .ui-datepicker-title {
+	color: #ffffff;
+	background-color: #585858;
+}
+
+.fc-view-todo .fc-table-datepicker .ui-datepicker-prev,
+.fc-view-todo .fc-table-datepicker .ui-datepicker-next {
 	display: none;
 }
 
@@ -1126,67 +1232,115 @@ table.fc-border-separate {
 	color: #E30613;
 }
 
-.fc-event.fc-event-row:hover td.fc-event-date,
-.fc-event.fc-event-row:hover td.fc-event-time,
-.fc-event.fc-event-row:hover td.fc-event-title,
-.fc-event.fc-event-row:hover td.fc-event-status,
-.fc-event.fc-event-row:hover td.fc-event-percent
+.fc-event.fc-event-row:hover
 {
 	color: #404040;
 	background-color: #e7e7e7;
 	cursor: pointer;
 }
 
-.fc-event.fc-event-row.fc-event-urgent:hover td.fc-event-date,
-.fc-event.fc-event-row.fc-event-urgent:hover td.fc-event-time,
-.fc-event.fc-event-row.fc-event-urgent:hover td.fc-event-title,
-.fc-event.fc-event-row.fc-event-urgent:hover td.fc-event-status,
-.fc-event.fc-event-row.fc-event-urgent:hover td.fc-event-percent
+.fc-event.fc-event-row.fc-event-urgent:hover
 {
 	color: #9E2F36;
 	background-color: #fedee0;
 	cursor: pointer;
 }
 
-.fc-event.fc-event-row.fc-event-pastdue:hover td.fc-event-date,
-.fc-event.fc-event-row.fc-event-pastdue:hover td.fc-event-time,
-.fc-event.fc-event-row.fc-event-pastdue:hover td.fc-event-title,
-.fc-event.fc-event-row.fc-event-pastdue:hover td.fc-event-status,
-.fc-event.fc-event-row.fc-event-pastdue:hover td.fc-event-percent
+.fc-event.fc-event-row.fc-event-pastdue:hover
 {
 	color: #e30613;
 	background-color: #fedee0;
 	cursor: pointer;
 }
 
-.fc-event.fc-event-row.fc-event-selected td.fc-event-date,
-.fc-event.fc-event-row.fc-event-selected td.fc-event-time,
-.fc-event.fc-event-row.fc-event-selected td.fc-event-title,
-.fc-event.fc-event-row.fc-event-selected td.fc-event-status,
-.fc-event.fc-event-row.fc-event-selected td.fc-event-percent
+.fc-event.fc-event-row.fc-event-selected
 {
 	color: #eeeeee;
 	background-color: #585858 !important;
 }
 
-.fc-event.fc-event-row.fc-event-selected.fc-event-urgent td.fc-event-date,
-.fc-event.fc-event-row.fc-event-selected.fc-event-urgent td.fc-event-time,
-.fc-event.fc-event-row.fc-event-selected.fc-event-urgent td.fc-event-title,
-.fc-event.fc-event-row.fc-event-selected.fc-event-urgent td.fc-event-status,
-.fc-event.fc-event-row.fc-event-selected.fc-event-urgent td.fc-event-percent
+.fc-event.fc-event-row.fc-event-selected.fc-event-urgent
 {
 	color: #ffffff;
 	background-color: #9E2F36 !important;
 }
 
-.fc-event.fc-event-row.fc-event-selected.fc-event-pastdue td.fc-event-date,
-.fc-event.fc-event-row.fc-event-selected.fc-event-pastdue td.fc-event-time,
-.fc-event.fc-event-row.fc-event-selected.fc-event-pastdue td.fc-event-title,
-.fc-event.fc-event-row.fc-event-selected.fc-event-pastdue td.fc-event-status,
-.fc-event.fc-event-row.fc-event-selected.fc-event-pastdue td.fc-event-percent
+.fc-event.fc-event-row.fc-event-selected.fc-event-pastdue
 {
 	color: #ffffff;
 	background-color: #e30613 !important;
+}
+
+.fc-event-priority-3 {
+	background-image: url(../images/priority-1.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-priority-2 {
+	background-image: url(../images/priority-2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-priority-1 {
+	background-image: url(../images/priority-3.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-urgent .fc-event-priority-3 {
+	background-image: url(../images/priority-1-dr.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-urgent .fc-event-priority-2 {
+	background-image: url(../images/priority-2-dr.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-urgent .fc-event-priority-1 {
+	background-image: url(../images/priority-3-dr.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-pastdue .fc-event-priority-3 {
+	background-image: url(../images/priority-1-r.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-pastdue .fc-event-priority-2 {
+	background-image: url(../images/priority-2-r.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-pastdue .fc-event-priority-1 {
+	background-image: url(../images/priority-3-r.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-selected .fc-event-priority-3 {
+	background-image: url(../images/priority-1-w.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-selected .fc-event-priority-2 {
+	background-image: url(../images/priority-2-w.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.fc-event-selected .fc-event-priority-1 {
+	background-image: url(../images/priority-3-w.svg);
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .fc-event-filterAction .fc-event-status {
@@ -1308,53 +1462,3 @@ table.fc-border-separate {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-
-/*
-.fc-event-filterAction:hover .fc-event-status {
-	background-image: url(../images/needs_action_b.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-filterProgress:hover .fc-event-status {
-	background-image: url(../images/in_progress_b.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-filterCompleted:hover .fc-event-status {
-	background-image: url(../images/success_b.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-filterCanceled:hover .fc-event-status {
-	background-image: url(../images/reset_b.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-pastdue.fc-event-filterAction:hover .fc-event-status {
-	background-image: url(../images/needs_action_r.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-pastdue.fc-event-filterProgress:hover .fc-event-status {
-	background-image: url(../images/in_progress_w.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-pastdue.fc-event-filterCompleted:hover .fc-event-status {
-	background-image: url(../images/success_rw.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.fc-event-pastdue.fc-event-filterCanceled:hover .fc-event-status {
-	background-image: url(../images/reset_rw.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-*/

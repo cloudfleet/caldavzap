@@ -1,6 +1,6 @@
 /*
 CalDavZAP - the open source CalDAV Web Client
-Copyright (C) 2011-2014
+Copyright (C) 2011-2015
     Jan Mate <jan.mate@inf-it.com>
     Andrej Lezo <andrej.lezo@inf-it.com>
     Matej Mihalik <matej.mihalik@inf-it.com>
@@ -106,7 +106,7 @@ String.prototype.customCompare=function(stringB, alphabet, dir, caseSensitive)
 				return (index1<index2 ? -dir : dir);
 		}
 	}
-}
+};
 
 function customResourceCompare(objA, objB)
 {
@@ -139,7 +139,7 @@ String.prototype.replaceAll=function(stringToFind,stringToReplace)
 	while(temp.indexOf(stringToFind)!=-1)
 		temp=temp.replace(stringToFind,stringToReplace);
 	return temp;
-}
+};
 
 // Pad number with leading zeroes
 Number.prototype.pad=function(size){
@@ -147,7 +147,7 @@ Number.prototype.pad=function(size){
 	while(s.length<size)
 		s='0'+s;
 	return s;
-}
+};
 
 // Case insensitive search for attributes
 // Usage:	$('#selector').find(':attrCaseInsensitive(data-type,"'+typeList[i]+'")')
@@ -157,12 +157,215 @@ jQuery.expr[':'].attrCaseInsensitive=function(elem, index, match)
 		attribute=matchParams[0].replace(/^\s*|\s*$/g,''),
 		value=matchParams[1].replace(/^\s*"|"\s*$/g,'').toLowerCase();
 	return jQuery(elem)['attr'](attribute)!=undefined && jQuery(elem)['attr'](attribute)==value;
-}
+};
 
 // Capitalize given string
 function capitalize(string)
 {
 	return string.charAt(0).toUpperCase()+string.slice(1).toLowerCase();
+}
+var timezoneKeys = new Array();
+function populateTimezoneKeys()
+{
+	for(var i in timezones)
+	timezoneKeys.push(i);
+
+	timezoneKeys.push('0local');
+	timezoneKeys.push('1UTC');
+
+	timezoneKeys.sort();
+
+	timezoneKeys[0] = timezoneKeys[0].substring(1);
+	timezoneKeys[1] = timezoneKeys[1].substring(1);
+	jQuery.extend(timezones,{'UTC':{}});
+}
+
+Date.prototype.getWeekNo=function()
+{
+	var today = this;
+	Year = today.getFullYear();
+	Month = today.getMonth();
+	Day = today.getDate();
+	now = Date.UTC(Year,Month,Day,0,0,0);
+	var Firstday = new Date();
+	Firstday.setYear(Year);
+	Firstday.setMonth(0);
+	Firstday.setDate(1);
+	then = Date.UTC(Year,0,1,0,0,0);
+	var Compensation = Firstday.getDay();
+	if(((now-then)/86400000) > 3)
+		NumberOfWeek =  Math.round((((now-then)/86400000)+Compensation)/7);
+	else
+	{
+		if(Firstday.getDay()>4 || Firstday.getDay()==0)
+		NumberOfWeek =  53;
+	}
+	return NumberOfWeek;
+}
+
+function zeroPad(n) {
+	return (n < 10 ? '0' : '') + n;
+}
+
+var dateFormatters = {
+	s	: function(d)	{return d.getSeconds() },
+	ss	: function(d)	{return zeroPad(d.getSeconds())},
+	m	: function(d)	{return d.getMinutes()},
+	mm	: function(d)	{return zeroPad(d.getMinutes())},
+	h	: function(d)	{return d.getHours() % 12 || 12},
+	hh	: function(d)	{return zeroPad(d.getHours() % 12 || 12)},
+	H	: function(d)	{return d.getHours()},
+	HH	: function(d)	{return zeroPad(d.getHours())},
+	d	: function(d)	{return d.getDate()},
+	dd	: function(d)	{return zeroPad(d.getDate())},
+	ddd	: function(d,o)	{return o.dayNamesShort[d.getDay()]},
+	dddd: function(d,o)	{return o.dayNames[d.getDay()]},
+	W	: function(d)	{return d.getWeekNo()},
+	M	: function(d)	{return d.getMonth() + 1},
+	MM	: function(d)	{return zeroPad(d.getMonth() + 1)},
+	MMM	: function(d,o)	{return o.monthNamesShort[d.getMonth()]},
+	MMMM: function(d,o)	{return o.monthNames[d.getMonth()]},
+	yy	: function(d)	{return (d.getFullYear()+'').substring(2)},
+	yyyy: function(d)	{return d.getFullYear()},
+	t	: function(d)	{return d.getHours() < 12 ? 'a' : 'p'},
+	tt	: function(d)	{return d.getHours() < 12 ? 'am' : 'pm'},
+	T	: function(d)	{return d.getHours() < 12 ? 'A' : 'P'},
+	TT	: function(d)	{return d.getHours() < 12 ? 'AM' : 'PM'},
+	u	: function(d)	{return formatDates(d, null, "yyyy-MM-dd'T'HH:mm:ss'Z'")},
+	S	: function(d)	{
+		var date = d.getDate();
+		if (date > 10 && date < 20) {
+			return 'th';
+		}
+		return ['st', 'nd', 'rd'][date%10-1] || 'th';
+	}
+};
+
+
+function formatDates(date1, date2, format, options) {
+	options = options;
+	var date = date1,
+		otherDate = date2,
+		i, len = format.length, c,
+		i2, formatter,
+		res = '';
+	for (i=0; i<len; i++) {
+		c = format.charAt(i);
+		if (c == "'") {
+			for (i2=i+1; i2<len; i2++) {
+				if (format.charAt(i2) == "'") {
+					if (date) {
+						if (i2 == i+1) {
+							res += "'";
+						}else{
+							res += format.substring(i+1, i2);
+						}
+						i = i2;
+					}
+					break;
+				}
+			}
+		}
+		else if (c == '(') {
+			for (i2=i+1; i2<len; i2++) {
+				if (format.charAt(i2) == ')') {
+					var subres = formatDates(date, null, format.substring(i+1, i2), options);
+					if (parseInt(subres.replace(/\D/, ''), 10)) {
+						res += subres;
+					}
+					i = i2;
+					break;
+				}
+			}
+		}
+		else if (c == '[') {
+			for (i2=i+1; i2<len; i2++) {
+				if (format.charAt(i2) == ']') {
+					var subformat = format.substring(i+1, i2);
+					var subres = formatDates(date, null, subformat, options);
+					if (subres != formatDates(otherDate, null, subformat, options)) {
+						res += subres;
+					}
+					i = i2;
+					break;
+				}
+			}
+		}
+		else if (c == '{') {
+			date = date2;
+			otherDate = date1;
+		}
+		else if (c == '}') {
+			date = date1;
+			otherDate = date2;
+		}
+		else {
+			for (i2=len; i2>i; i2--) {
+				if (formatter = dateFormatters[format.substring(i, i2)]) {
+					if (date) {
+						res += formatter(date, options);
+					}
+					i = i2 - 1;
+					break;
+				}
+			}
+			if (i2 == i) {
+				if (date) {
+					res += c;
+				}
+			}
+		}
+	}
+	return res;
+};
+function vObjectLineFolding(inputText)
+{
+	var outputText='';
+	var maxLineOctetLength=75;
+	var count=0;
+
+	for(var i=0; inputText[i]!=undefined; i++)
+	{
+		var currentChar=inputText.charCodeAt(i);
+		var nextChar=inputText.charCodeAt(i+1);
+		if(currentChar==0x000D && nextChar==0x000A)
+		{
+			count=0;
+			outputText+='\r\n';
+			i++;
+			continue;
+		}
+
+		var surrogatePair=false;
+		if(currentChar<0x0080)
+			var charNum=1;
+		else if(currentChar<0x0800)
+			var charNum=2;
+		else if(currentChar<0xd800 || currentChar>=0xe000)
+			var charNum=3;
+		else
+		{
+			// surrogate pair
+			// UTF-16 encodes 0x10000-0x10FFFF by subtracting 0x10000 and splitting
+			// the 20 bits of 0x0-0xFFFFF into two halves
+			charNum=4;
+			surrogatePair=true;
+		}
+
+		if(count>maxLineOctetLength-charNum)
+		{
+			outputText+='\r\n ';
+			count=1;
+		}
+		outputText+=String.fromCharCode(currentChar);
+		if(surrogatePair)
+		{
+			outputText+=String.fromCharCode(vCardText.charCodeAt(i+1));
+			i++;
+		}
+		count+=charNum;
+	}
+	return outputText;
 }
 
 function rgbToHex(rgb)

@@ -12,6 +12,11 @@
 	border-right: 1px solid #c0c0c0;
 	z-index: 26;
 	padding-top: 3px;
+	cursor: default;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 .integration_d div
@@ -21,6 +26,11 @@
 	width: 36px;
 	padding: 7px 7px;
 	cursor: pointer;
+}
+
+.integration_d .intBlank
+{
+	cursor: default;
 }
 
 #intCaldav
@@ -53,10 +63,9 @@
 	background: url(../images/banner_settings.svg) no-repeat center;
 }
 
-#intBlank
+#intRefresh
 {
-	display: block;
-	cursor: default;
+	background: url(../images/banner_refresh.svg) no-repeat center;
 }
 
 #intLogout
@@ -90,16 +99,6 @@
 	left: 275px;
 }
 
-#todoForm_h, #todoColor, #todoLoader
-{
-	left: 694px;
-}
-
-#todoForm
-{
-	left: 697px;
-}
-
 .resourcesCardDAV_d, #ResourceCardDAVList, #ResourceCardDAVListOverlay
 {
 	left: 50px;
@@ -110,7 +109,7 @@
 	left: 275px;
 }
 
-.contact_d, #ABContactColor, #ABContactOverlay, #ABMessage
+/*.contact_d, #ABContactColor, #ABContactOverlay, #ABMessage
 {
 	left: 526px;
 }
@@ -118,9 +117,9 @@
 #ABContact
 {
 	left: 529px;
-}
+}*/
 
-.filters_d, .statistics_d, #FilterList, #ProjectsData, #SystemProjectsLock, #ProjectListDisabler
+.filters_d, .statistics_d, #FilterList, #ProjectsData, #SystemProjectsLock, #SystemReportsLock, #ProjectListDisabler
 {
 	left: 50px;
 }
@@ -150,7 +149,7 @@
 	left: 50px;
 }
 
-.report_filters_d, #ReportFilters
+.report_filters_d, #ReportFilterList
 {
 	left: 275px;
 }

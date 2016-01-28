@@ -27,7 +27,7 @@
 				'username'=>$_SERVER['PHP_AUTH_USER'],
 				'password'=>$_SERVER['PHP_AUTH_PW']
 			),
-			'timeout'=>30000,
+			'timeout'=>90000,
 			'locktimeout'=>10000
 		)
 	);
@@ -49,7 +49,7 @@
 				'username'=>$_SERVER['PHP_AUTH_USER'],
 				'password'=>$_SERVER['PHP_AUTH_PW']
 			),
-			'timeout'=>30000,
+			'timeout'=>90000,
 			'locktimeout'=>10000
 		)
 	);

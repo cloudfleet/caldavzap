@@ -17,8 +17,7 @@
 			<username>user</username>
 			<password>password</password>
 		</userauth>
-		<syncinterval>60000</syncinterval>
-		<timeout>30000</timeout>
+		<timeout>90000</timeout>
 		<locktimeout>10000</locktimeout>
 	</resource>
 	<resource>
@@ -54,8 +53,7 @@
 			<username>user</username>
 			<password>password</password>
 		</userauth>
-		<syncinterval>60000</syncinterval>
-		<timeout>30000</timeout>
+		<timeout>90000</timeout>
 		<locktimeout>10000</locktimeout>
 	</resource>
 	<resource>
@@ -81,8 +79,7 @@
 			<username>user</username>
 			<password>password</password>
 		</userauth>
-		<syncinterval>60000</syncinterval>
-		<timeout>30000</timeout>
+		<timeout>90000</timeout>
 		<locktimeout>10000</locktimeout>
 	</resource>
 </resources>

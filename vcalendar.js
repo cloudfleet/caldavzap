@@ -1,6 +1,6 @@
 /*
 CalDavZAP - the open source CalDAV Web Client
-Copyright (C) 2011-2014
+Copyright (C) 2011-2015
     Jan Mate <jan.mate@inf-it.com>
     Andrej Lezo <andrej.lezo@inf-it.com>
     Matej Mihalik <matej.mihalik@inf-it.com>
@@ -26,15 +26,15 @@ function EventList()
 	this.todos={};
 	this.displayEventsArray={};
 	this.displayTodosArray={};
-	this.repeatable=new Array();
-	this.repeatableTodo=new Array();
+	this.repeatable={};
+	this.repeatableTodo={};
 
 	this.reset=function()
 	{
 		this.events={};
 		this.todos={};
-		this.repeatable.splice(0, this.repeatable.length);
-		this.repeatableTodo.splice(0, this.repeatableTodo.length);
+		this.repeatable={};
+		this.repeatableTodo={};
 		this.displayEventsArray={};
 		this.displayTodosArray={};
 	}
@@ -113,7 +113,7 @@ function EventList()
 				inputEvent.sortStart=res;
 			else
 			{
-				console.log("Error: '"+inputEvent.uid+"': cannot parse vEvent");
+				console.log("Error: '"+inputEvent.uid+"': unable to parse vEvent");
 				checkEventLoader(globalResourceCalDAVList.counterList[inputCollection.uid+' '+inputCollection.listType], true);
 				return false;
 			}
@@ -137,12 +137,12 @@ function EventList()
 			if(!isEvent)
 			{
 				if(vcalendarTodoData(inputCollection, inputEvent, true) == false)
-					console.log("Error: '"+inputEvent.uid+"': cannot parse vTodo");
+					console.log("Error: '"+inputEvent.uid+"': unable to parse vTodo");
 			}
 			else
 			{
 				if(vcalendarToData(inputCollection, inputEvent, true) == false)
-					console.log("Error: '"+inputEvent.uid+"': cannot parse vEvent");
+					console.log("Error: '"+inputEvent.uid+"': unable to parse vEvent");
 			}
 
 			if(isEvent)
@@ -262,13 +262,10 @@ function EventList()
 						$('#CATodo').attr('style','display:none');
 				}
 			}
-
-			for(var k=0;k<globalEventList.repeatable.length;k++)
-				if(globalEventList.repeatable[k].uid==inputUid)
-				{
-					globalEventList.repeatable.splice(k, 1);
-					break;
-				}
+			if(isEvent)
+				delete globalEventList.repeatable[inputUid];
+			else
+				delete globalEventList.repeatableTodo[inputUid];
 		}
 	}
 

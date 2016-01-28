@@ -1,6 +1,6 @@
 /*
 CalDavZAP - the open source CalDAV Web Client
-Copyright (C) 2011-2014
+Copyright (C) 2011-2015
     Jan Mate <jan.mate@inf-it.com>
     Andrej Lezo <andrej.lezo@inf-it.com>
     Matej Mihalik <matej.mihalik@inf-it.com>
@@ -21,90 +21,90 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-Light-webfont.eot');
-    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
-    font-weight: 300;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-Light-webfont.eot');
+	src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+		url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-Regular-webfont.eot');
-    src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
-    font-weight: 400;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-Regular-webfont.eot');
+	src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
+		url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-Medium-webfont.eot');
-    src: url('../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-Medium-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Medium-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-Medium-webfont.svg#robotomedium') format('svg');
-    font-weight: 500;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-Medium-webfont.eot');
+	src: url('../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Medium-webfont.woff') format('woff'),
+		url('../fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-Medium-webfont.svg#robotomedium') format('svg');
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-Bold-webfont.eot');
-    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
-    font-weight: 700;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-Bold-webfont.eot');
+	src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+		url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-LightItalic-webfont.eot');
-    src: url('../fonts/Roboto-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-LightItalic-webfont.woff') format('woff'),
-         url('../fonts/Roboto-LightItalic-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-LightItalic-webfont.svg#robotolight_italic') format('svg');
-    font-weight: 300;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-LightItalic-webfont.eot');
+	src: url('../fonts/Roboto-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-LightItalic-webfont.woff') format('woff'),
+		url('../fonts/Roboto-LightItalic-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-LightItalic-webfont.svg#robotolight_italic') format('svg');
+	font-weight: 300;
 	font-style: italic;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-Italic-webfont.eot');
-    src: url('../fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-Italic-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Italic-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-Italic-webfont.svg#robotoitalic') format('svg');
-    font-weight: 400;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-Italic-webfont.eot');
+	src: url('../fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Italic-webfont.woff') format('woff'),
+		url('../fonts/Roboto-Italic-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-Italic-webfont.svg#robotoitalic') format('svg');
+	font-weight: 400;
 	font-style: italic;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-MediumItalic-webfont.eot');
-    src: url('../fonts/Roboto-MediumItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-MediumItalic-webfont.woff') format('woff'),
-         url('../fonts/Roboto-MediumItalic-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-MediumItalic-webfont.svg#robotomedium_italic') format('svg');
-    font-weight: 500;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-MediumItalic-webfont.eot');
+	src: url('../fonts/Roboto-MediumItalic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-MediumItalic-webfont.woff') format('woff'),
+		url('../fonts/Roboto-MediumItalic-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-MediumItalic-webfont.svg#robotomedium_italic') format('svg');
+	font-weight: 500;
 	font-style: italic;
 }
 @font-face
 {
-    font-family: "Roboto";
-    src: url('../fonts/Roboto-BoldItalic-webfont.eot');
-    src: url('../fonts/Roboto-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-BoldItalic-webfont.woff') format('woff'),
-         url('../fonts/Roboto-BoldItalic-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-BoldItalic-webfont.svg#robotobold_italic') format('svg');
-    font-weight: 700;
+	font-family: "Roboto";
+	src: url('../fonts/Roboto-BoldItalic-webfont.eot');
+	src: url('../fonts/Roboto-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-BoldItalic-webfont.woff') format('woff'),
+		url('../fonts/Roboto-BoldItalic-webfont.ttf') format('truetype'),
+		url('../fonts/Roboto-BoldItalic-webfont.svg#robotobold_italic') format('svg');
+	font-weight: 700;
 	font-style: italic;
 }
 
@@ -168,14 +168,15 @@ body, input, select, textarea
 .collection_d
 {
 	position: absolute;
-	top: 0px;
+	top: 0;
 	left: 225px;
+	right: 582px;
 	border-right: 1px solid;
 	border-right-color: #c0c0c0;
-	width: 250px;
 	height: 24px;
 	background: #f0f0f0;
 	color: #404040;
+	cursor: default;
 
 	user-select: none;
 	-webkit-user-select: none;
@@ -204,12 +205,13 @@ body, input, select, textarea
 .contact_d
 {
 	position: absolute;
-	top: 0px;
-	left: 476px;
-	right: 0px;
+	top: 0;
+	right: 0;
+	width: 582px;
 	height: 24px;
 	background: #f0f0f0;
 	color: #404040;
+	cursor: default;
 
 	user-select: none;
 	-webkit-user-select: none;
@@ -239,9 +241,9 @@ body, input, select, textarea
 	display: block;
 	top: 24px;
 	left: 225px;
+	right: 582px;
 	border-right: 1px solid;
 	border-right-color: #c0c0c0;
-	width: 250px;
 	overflow: hidden;
 	background: #ffffff;
 	z-index: 2;	/* for floating headers */
@@ -249,6 +251,11 @@ body, input, select, textarea
 	height: 24px;
 	border-top: 1px solid #c0c0c0;
 	border-bottom: 1px solid #c0c0c0;
+	cursor: default;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 #SearchBox > .container
@@ -256,11 +263,11 @@ body, input, select, textarea
 	position: absolute;
 	top: 3px;
 	left: 31px;
-	width: 192px;
+	right: 27px;
 }
 #SearchBox *> input[data-type=search]
 {
-	width: 192px;
+	width: 100%;
 	background-color: #ffffff;
 }
 
@@ -270,13 +277,13 @@ body, input, select, textarea
 	display: block;
 	top: 50px;	/* search support */
 	left: 225px;
+	right: 582px;
+	bottom: 0;
 	border-right: 1px solid;
 	border-right-color: #c0c0c0;
-	bottom: 0px;
-	width: 250px;
-	overflow: auto;
-	overflow-x: hidden;
+	overflow: hidden;
 	background: #ffffff;
+	cursor: default;
 
 	user-select: none;
 	-webkit-user-select: none;
@@ -286,14 +293,19 @@ body, input, select, textarea
 #ABListOverlay
 {
 	position: absolute;
-	top: 0px;
+	top: 0;
 	left: 225px;
-	bottom: 0px;
-	width: 250px;
+	right: 583px;
+	bottom: 0;
 	overflow: hidden;
 	background: #ffffff;
 	display: none;
 	z-index: 10;
+	cursor: default;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 .half
@@ -304,17 +316,22 @@ body, input, select, textarea
 
 #ABContact
 {
-	display: block;
 	position: absolute;
 	top: 25px;
-	left: 479px;
-	right: 0px;
-	bottom: 0px;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 579px;
 	padding-bottom: 8px;
 	overflow: auto;
 	overflow-x: hidden;
 	background: #f0f0f0;
 	border-top: 1px solid #f0f0f0;
+	cursor: default;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 #ABContactColor
@@ -324,8 +341,9 @@ body, input, select, textarea
 	display: block;
 	top: 25px;
 	bottom: 0;
-	left: 476px;
+	right: 579px;
 	width: 3px;
+	cursor: default;
 
 	user-select: none;
 	-webkit-user-select: none;
@@ -336,13 +354,18 @@ body, input, select, textarea
 {
 	position: absolute;
 	top: 24px;
-	left: 476px;
-	right: 0px;
-	bottom: 0px;
+	right: 0;
+	bottom: 0;
+	width: 582px;
 	overflow: hidden;
 	background: #ffffff;
 	display: none;
 	z-index: 10;
+	cursor: default;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 #Login img[data-type=system_logo]
@@ -727,10 +750,10 @@ textarea[readonly]:-ms-input-placeholder
 }
 
 input[type=text]::-ms-clear {
-    display: none;
+	display: none;
 }
 input[type=password]::-ms-clear {
-    display: none;
+	display: none;
 }
 
 .iex
@@ -845,6 +868,11 @@ textarea[readonly].safari_hack
 	z-index: 101;
 	background: #f8f8f8;
 	display: none;	/* by default the login window is hidden */
+	cursor:default;
+
+	user-select: none;
+	-webkit-user-select:none;
+	-moz-user-select: -moz-none;
 }
 
 .window
@@ -913,6 +941,11 @@ textarea[readonly].safari_hack
 	opacity: 0.95;
 	text-align: center;
 	z-index: 200;
+	cursor:default;
+
+	user-select: none;
+	-webkit-user-select:none;
+	-moz-user-select: -moz-none;
 }
 
 #cacheDialogText
@@ -950,6 +983,11 @@ textarea[readonly].safari_hack
 	display: none;
 	opacity: 0.9;
 	z-index: 101;
+	cursor:default;
+
+	user-select: none;
+	-webkit-user-select:none;
+	-moz-user-select: -moz-none;
 }
 
 .loader
@@ -978,17 +1016,22 @@ textarea[readonly].safari_hack
 {
 	position: absolute;
 	top: 24px;
-	left: 476px;
-	right: 0px;
+	right: 0;
+	display: block;
+	width: 582px;
+	height: 0;
 	z-index: 20;
 
 	background: #ffffff;
 	border-bottom: 1px solid;
 	border-bottom-color: #c0c0c0;
 	border-top: 0px;
-	display: block;
-	height: 0px;
 	overflow: hidden;
+	cursor: default;
+
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 #ABInMessage
@@ -1006,6 +1049,32 @@ textarea[readonly].safari_hack
 }
 
 #ABMessageText, #ABInMessageText
+{
+	position: absolute;
+	padding: 7px;
+	text-align: center;
+	vertical-align: bottom;
+	width: 100%;
+	font-weight: 500;
+	background: #ffffff;
+	bottom: 0px;
+}
+
+#ABInMessageEditBox
+{
+	position: relative;
+	top: -1px;
+	display:none;
+
+	background: #ffffff;
+	border-bottom: 1px solid;
+	border-bottom-color: #404040;
+	border-top: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+
+#ABInMessageTextEditBox
 {
 	position: absolute;
 	padding: 7px;
@@ -1052,6 +1121,11 @@ textarea[readonly].safari_hack
 .element_no_display_af
 {
 	display: none !important;
+}
+
+input.non_editable
+{
+	background-color: #f5f5f5 !important;
 }
 
 /* XXX - For the next version
@@ -1364,17 +1438,17 @@ h3
 
 #todoForm_h
 {
-	left: 644px;
-	right: 0px;
+	right: 0;
+	width: 413px;
 }
 
 #todoForm
 {
 	position: absolute;
 	top: 25px;
-	left: 647px;
-	right: 0px;
-	bottom: 0px;
+	right: 0;
+	bottom: 0;
+	width: 410px;
 	overflow: auto;
 	overflow-x: hidden;
 	background-color: #f0f0f0;
@@ -1385,9 +1459,9 @@ h3
 	position: absolute;
 	display: none;
 	top: 25px;
-	left: 644px;
-	right: 0px;
-	bottom: 0px;
+	right: 0;
+	bottom: 0;
+	width: 413px;
 	z-index: 101;
 	background-color: #fff;
 }
@@ -1402,7 +1476,7 @@ h3
 #main_h_TODO
 {
 	left: 224px;
-	width: 418px;
+	right: 413px;
 	border-left: 1px solid #c0c0c0;
 	border-right: 1px solid #c0c0c0;
 /*	border-bottom: 1px solid #FFFFFF;*/
@@ -1495,8 +1569,8 @@ h3
 	position: absolute;
 	top: 24px;
 	left: 224px;
-	width: 418px;
-	height:100px;
+	right: 413px;
+	height: 24px;
 	background: #ffffff;
 	border-left: 1px solid;
 	border-right: 1px solid;
@@ -1504,7 +1578,6 @@ h3
 	overflow: hidden;
 
 	z-index: 25;
-	height: 24px;
 	border-top: 1px solid;
 	border-top-color: #c0c0c0;
 	border-bottom: 1px solid;
@@ -1536,7 +1609,7 @@ h3
 	position: absolute;
 	top: 50px;
 	left: 224px;
-	bottom: 0px;
+	bottom: 0;
 	padding: 0px 7px;
 	background: #ffffff;
 	border-left: 1px solid;
@@ -1554,11 +1627,11 @@ h3
 
 #main
 {
-	right: 0px;
+	right: 0;
 }
 #mainTODO
 {
-	width: 404px;
+	right: 413px;
 }
 
 #calendar, #todoList
@@ -1576,6 +1649,8 @@ h3
 #todoList
 {
 	padding: 7px 0px;
+	/* Safari Scrollbar fix */
+	margin-bottom: -4px;
 }
 
 #alertBox
@@ -1588,7 +1663,13 @@ h3
 	background: white;
 	border: 1px solid #c0c0c0;
 	z-index: 102;
+	cursor:default;
+
+	user-select: none;
+	-webkit-user-select:none;
+	-moz-user-select: -moz-none;
 }
+
 #repeatConfirmBox
 {
 	width: 100%;
@@ -1603,7 +1684,7 @@ h3
 #repeatConfirmBoxTODO
 {
 	position: absolute;
-	width: 410px;
+	width: 100%;
 	text-align: center;
 	visibility: hidden;
 	background-color: #f0f0f0;
@@ -1636,10 +1717,10 @@ h3
 	opacity: 0.7;
 	filter: alpha(opacity=70);
 	z-index: 99;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	width: 643px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 414px;
 	display: none;
 	cursor:default;
 
@@ -1660,6 +1741,11 @@ h3
 	top: 0px;
 	left: 0px;
 	display: none;
+	cursor:default;
+
+	user-select: none;
+	-webkit-user-select:none;
+	-moz-user-select: -moz-none;
 }
 
 .resourceCalDAVColor
@@ -1864,6 +1950,11 @@ h3
 
 #todo_details_template
 {
+	width: 410px;
+}
+
+#todo_details_template
+{
 	z-index: 26;
 }
 
@@ -1889,8 +1980,8 @@ h3
 	position: absolute;
 	display: block;
 	top: 24px;
-	bottom: 0px;
-	left: 644px;
+	bottom: 0;
+	right: 410px;
 	width: 3px;
 	background-color: #f0f0f0;
 	border-top: 1px solid #f0f0f0;
@@ -2187,11 +2278,6 @@ input.verySmall[type="text"]
 	width: 23%;
 	margin: 5px 2px 0px 0px;
 	float: left;
-}
-
-#editOptionsButton, #editOptionsButtonTODO
-{
-	width: 46% !important;
 }
 
 .customTable
@@ -2552,23 +2638,17 @@ img[data-type="invalidVerySmall"]
 	z-index: 100;
 }
 
-#todoForm #CATodo, #todoForm #todo_details_template
+#CATodo, #todo_details_template
 {
 	display: block;
 	border: none;
+	width: 100%;
 	height: 100%;
-	overflow: visible;
 }
 
-#todoForm #CATodo
+#CATodo
 {
-	width: 410px;
 	display: none;
-}
-
-#todoForm #todoDetailsContainer
-{
-	padding-bottom: 8px;
 }
 
 .title_cancelled

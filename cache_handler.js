@@ -72,7 +72,7 @@ window.addEventListener('load', function(e)
 		if(!isUserLogged)
 		{
 			clearInterval(globalCacheUpdateInterval);
-			globalCacheUpdateInterval=setInterval(function(){window.applicationCache.update()}, 300000);
+			globalCacheUpdateInterval=setInterval(function(){window.applicationCache.update();}, 300000);
 			//$('#LoginPage .window').css('display', 'inline-block');
 		}
 	}, false);

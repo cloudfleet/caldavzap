@@ -1,11 +1,19 @@
 CACHE MANIFEST
-#V 20141007225433
+#V 20150922153002
 
 CACHE:
 common.js
 config.js
+data_process.js
+forms.js
+interface.js
 localization.js
 main.js
+resource.js
+timezones.js
+vcalendar.js
+vcalendar_rfc_regex.js
+vtodo.js
 webdav_protocol.js
 css/default.css
 css/default_integration.css
@@ -52,6 +60,7 @@ images/arrow_prev_red.svg
 images/arrow_prev.svg
 images/banner_calendar.svg
 images/banner_logout.svg
+images/banner_refresh.svg
 images/banner_todo.svg
 images/calendarB.svg
 images/cdz_logo.svg
@@ -82,6 +91,19 @@ images/needs_action_dr.svg
 images/needs_action_r.svg
 images/needs_action_w.svg
 images/new_item.svg
+images/popupArrow.svg
+images/priority-1-dr.svg
+images/priority-1-r.svg
+images/priority-1.svg
+images/priority-1-w.svg
+images/priority-2-dr.svg
+images/priority-2-r.svg
+images/priority-2.svg
+images/priority-2-w.svg
+images/priority-3-dr.svg
+images/priority-3-r.svg
+images/priority-3.svg
+images/priority-3-w.svg
 images/read_only_b.svg
 images/read_only_w.svg
 images/remove_cal.svg
@@ -114,13 +136,14 @@ images/success_w.svg
 images/todoB.svg
 lib/fullcalendar.js
 lib/ie_base64.js
-lib/jquery-2.1.1.min.js
+lib/jquery-2.1.4.min.js
 lib/jquery.autosize.js
 lib/jquery.browser.js
 lib/jquery.placeholder-1.1.9.js
 lib/jquery.quicksearch.js
-lib/jquery-ui-1.11.1.custom.js
+lib/jquery-ui-1.11.4.custom.js
 lib/jshash-2.2_sha256.js
+lib/rrule.js
 lib/spectrum.js
 
 NETWORK:
